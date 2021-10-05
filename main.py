@@ -1,25 +1,27 @@
 souradnicexy = [(0, 0)]
-x = 0
 
 
-def pohyb(souradnice, smer):
-    actual_position=souradnice[0]
-    if smer == 's':
-        new_position=(actual_position[0],actual_position[1]-1)
-    elif smer == 'z':
-        new_position=(actual_position[0]-1,actual_position[1])
-    elif smer == 'v':
-        new_position=(actual_position[0]+1,actual_position[1])
-    elif smer == 'j':
-        new_position=(actual_position[0],actual_position[1]-1)
-
+def pohyb(coordinates, direction):
+    actual_position = coordinates[len(coordinates) - 1]
+    movement_parameters = {"s": (0, -1), "j": (0, +1), "z": (-1, 0), "v": (+1, 0)}
+    if direction in movement_parameters:
+        new_position = (
+            actual_position[0] + movement_parameters[direction][0],
+            actual_position[1] + movement_parameters[direction][1],
+        )
     souradnicexy.append(new_position)
 
-pohyb(souradnicexy, 'j')
+
 print(souradnicexy)
-pohyb(souradnicexy, 'v')
+pohyb(souradnicexy, "s")
 print(souradnicexy)
-pohyb(souradnicexy, 'v')
+pohyb(souradnicexy, "s")
 print(souradnicexy)
-pohyb(souradnicexy, 'j')
+pohyb(souradnicexy, "z")
+print(souradnicexy)
+pohyb(souradnicexy, "j")
+print(souradnicexy)
+pohyb(souradnicexy, "v")
+print(souradnicexy)
+pohyb(souradnicexy, "j")
 print(souradnicexy)
