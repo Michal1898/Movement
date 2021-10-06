@@ -9,7 +9,7 @@ def pohyb(coordinates, direction):
             actual_position[0] + movement_parameters[direction][0],
             actual_position[1] + movement_parameters[direction][1],
         )
-    souradnicexy.append(new_position)
+    coordinates.append(new_position)
 
 
 print(souradnicexy)
